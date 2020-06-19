@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/holodremont</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="ao389050_holodremont@ao389050.mysql.tools" uuid="f445a6d1-1643-4743-ab58-c686dd71b1b7">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://ao389050.mysql.tools:3306/ao389050_holodremont</jdbc-url>
+    </data-source>
   </component>
 </project>
