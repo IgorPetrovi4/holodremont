@@ -14,14 +14,15 @@
 <body>
 
 <header>
-    {% block header %}{% endblock %}
+    {% block header %}
+        {{ include('header.html.twig') }}
+    {% endblock %}
 </header>
 <main role="main">
-    {% block main %}
-
-    {% block marketing %}{% endblock %}
-    {% block footer %}{% endblock %}
-
+    {% block body %} {% endblock %}
+    {% block sidebar %} {% endblock %}
+    {% block footer %}
+        {{ include('footer.html.twig') }}
     {% endblock %}
 </main>
 
