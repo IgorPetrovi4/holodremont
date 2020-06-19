@@ -1,0 +1,10 @@
+{% extends 'admin/index.html.twig'%}
+
+{% block title %}New Orders{% endblock %}
+{% block heading %} Добавить {% endblock %}
+{% block heading_right %}
+    <li> <a class="btn btn-info ml-2" href="{{ path('orders_index') }}" role="button"><i class="fas fa-arrow-circle-left"></i></a></li>
+{% endblock %}
+{% block body %}
+    {{ include('orders/_form.html.twig') }}
+{% endblock %}

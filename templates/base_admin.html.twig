@@ -68,12 +68,12 @@
                             </p>
                         </a>
                         <ul class="nav nav-treeview">
-                            <li class="nav-item">
+                          {#  <li class="nav-item">
                                 <a href="#" class="nav-link ">
                                     <i class="fas fa-users nav-icon"></i>
                                     <p>Клиенты</p>
                                 </a>
-                            </li>
+                            </li>#}
                             <li class="nav-item">
                                 <a href="{{ path('feedback_index') }}" class="nav-link">
                                     <i class="fas fa-comments nav-icon"></i>
@@ -99,7 +99,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{path('orders_index')}}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Цены</p>
                                 </a>
@@ -111,7 +111,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{ path('contacts_index') }}" class="nav-link">
                                     <i class="far fa-circle nav-icon"></i>
                                     <p>Контакты</p>
                                 </a>

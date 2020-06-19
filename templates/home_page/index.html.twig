@@ -58,6 +58,15 @@
 
         <!--End Modal -->
     {% endblock %}
+
+    <!-- ALLERT FLASH -->
+    {% for message in app.flashes('success') %}
+        <div class="alert alert-danger text-center">
+            {{ message }}
+        </div>
+        <!-- Alert -->
+
+    {% endfor %}
     <hr class="featurette-divider">
     {% block marketing %}
         <div class="container marketing">

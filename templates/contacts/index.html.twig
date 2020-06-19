@@ -1,0 +1,40 @@
+{% extends 'admin/index.html.twig'%}
+
+{% block title %}Contacts index{% endblock %}
+{% block heading %}Мои контакты {% endblock %}
+{% block heading_right %}
+    <li> <a class="btn btn-info" href="{{ path('contacts_new') }}" role="button">Создать</a></li>
+
+
+{% endblock %}
+{% block body %}
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>№</th>
+                <th>Контакты</th>
+                <th>Удалить</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contact in contacts %}
+            <tr>
+                <td>{{ contact.id }}</td>
+                <td>{{ contact.contact }}</td>
+                <td>
+                    {{ include('contacts/_delete_form.html.twig') }}
+                    {#<a href="{{ path('contacts_show', {'id': contact.id}) }}">show</a>
+                    <a href="{{ path('contacts_edit', {'id': contact.id}) }}">edit</a>#}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

@@ -42,6 +42,11 @@ class Feedback
      */
     private $letter;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $adress;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +108,18 @@ class Feedback
     public function setletter(?string $letter): self
     {
         $this->letter = $letter;
+
+        return $this;
+    }
+
+    public function getAdress(): ?string
+    {
+        return $this->adress;
+    }
+
+    public function setAdress(?string $adress): self
+    {
+        $this->adress = $adress;
 
         return $this;
     }

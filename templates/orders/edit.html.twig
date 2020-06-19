@@ -1,0 +1,14 @@
+{% extends 'admin/index.html.twig'%}
+
+{% block title %}Edit Orders{% endblock %}
+{% block heading %}Редактировать {% endblock %}
+{% block heading_right %}
+    <li> <a class="btn btn-info ml-2" href="{{ path('orders_index') }}" role="button"><i class="fas fa-arrow-circle-left"></i></a></li>
+    <li>  {{ include('orders/_delete_form.html.twig') }} </li>
+
+{% endblock %}
+{% block body %}
+
+    {{ include('orders/_form.html.twig', {'button_label': 'Обновить'}) }}
+
+{% endblock %}

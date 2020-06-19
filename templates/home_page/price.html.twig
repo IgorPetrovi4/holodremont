@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ремонт Холодильников{% endblock %}
+
+{% block body %}
+
+    <div class="container-sm " style="padding-top: 100px">
+        <h1 class="text-center">НАШИ ЦЕНЫ</h1>
+    <table class="table table-sm table-dark mt-5">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Услуга</th>
+            <th scope="col">Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.service }}</td>
+                <td>{{ order.price }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+
+
+   {# <table class="table">
+        <thead>
+        <tr>
+            <th>Услуга</th>
+            <th>Цена</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for order in orders %}
+            <tr>
+                <td>{{ order.id }}</td>
+                <td>{{ order.service }}</td>
+                <td>{{ order.price }}</td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>#}
+
+
+{% endblock %}

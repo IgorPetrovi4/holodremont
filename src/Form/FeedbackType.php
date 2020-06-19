@@ -28,6 +28,9 @@ class FeedbackType extends AbstractType
             ->add('email', EmailType::class,[
                 'label'=>'Email',
             ])
+            ->add('adress', TextType::class,[
+                'label'=>'Адресс вызова',
+            ])
             ->add('letter', TextareaType::class,[
                 'label'=>'Напишите нам',
                 'attr' => ['rows' => 4],

@@ -4,7 +4,9 @@ namespace App\Controller;
 
 use App\Entity\Feedback;
 use App\Form\FeedbackType;
+use App\Repository\ContactsRepository;
 use App\Repository\HomePageContentRepository;
+use App\Repository\OrdersRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -26,7 +28,8 @@ class HomePageController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($feedback);
             $entityManager->flush();
-
+            $this->addFlash('success', 'Спасибо за Ваш заказ! В ближайшее время мы с Вами свяжемся.');
+            return $this->redirectToRoute('home_page');
         }
 
 
@@ -34,6 +37,20 @@ class HomePageController extends AbstractController
             'home_page_contents' => $homePageContentRepository->findAll(),
             'feedback' => $feedback,
             'form' => $form->createView(),
+
         ]);
     }
+
+
+    /**
+     * @Route("/price", name="price")
+     */
+    public function price(OrdersRepository $ordersRepository): Response
+    {
+        return $this->render('home_page/price.html.twig', [
+            'orders' => $ordersRepository->findAll(),
+        ]);
+    }
+
+
 }
