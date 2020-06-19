@@ -1,0 +1,62 @@
+{% extends 'admin/index.html.twig'%}
+
+{% block title %}HomePageContent index{% endblock %}
+{% block heading %} Настройка домашней страницы {% endblock %}
+{% block heading_right %}
+    <li> <a class="btn btn-info" href="{{ path('home_page_content_new') }}" role="button">Создать</a></li>
+
+
+{% endblock %}
+{% block body %}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Изображение Карусель</th>
+                <th>Заголовок текста Карусель</th>
+                <th>Текст Карусель</th>
+                <th>Изображение Круг</th>
+                <th>Заголовок Круг</th>
+                <th>Текст Круг</th>
+                <th>Изображение Маркетинг</th>
+                <th>Заголовок Маркетинг</th>
+                <th>Текст Маркетинг</th>
+                <th>действия</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for home_page_content in home_page_contents %}
+            <tr>
+                <td> <img src="{{ asset('images/upload_images/' ~ home_page_content.imgCarusel) }}" width="60" height="60" ></td>
+                <td>{{ home_page_content.headingCarusel }}</td>
+                <td>{{ home_page_content.textCarusel }}</td>
+                <td> <img src="{{ asset('images/upload_images/' ~ home_page_content.imgCircle) }}" width="60" height="60" ></td>
+                <td>{{ home_page_content.headingCircle }}</td>
+                <td>{{ home_page_content.textCircle }}</td>
+                <td> <img src="{{ asset('images/upload_images/' ~ home_page_content.imgMarketing) }}" width="60" height="60" ></td>
+                <td>{{ home_page_content.headingMarketing }}</td>
+                <td>{{ home_page_content.textMarketing }}</td>
+                <td>
+                    <a href="{{ path('home_page_content_show', {'id': home_page_content.id}) }}">
+                        <span style="font-size: 30px; color: Teal;">
+                            <i class="fas fa-eye" ></i>
+                        </span>
+                    </a>
+
+                    <a href="{{ path('home_page_content_edit', {'id': home_page_content.id}) }}">
+                        <span style="font-size: 30px; color: Teal;">
+                            <i class="fas fa-edit"></i>
+                        </span>
+                    </a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="10">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+{% endblock %}

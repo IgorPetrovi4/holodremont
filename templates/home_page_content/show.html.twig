@@ -1,0 +1,58 @@
+{% extends 'admin/index.html.twig'%}
+
+{% block title %}HomePageContent{% endblock %}
+{% block heading %}Просмотр {% endblock %}
+{% block heading_right %}
+    <li> <a class="btn btn-info ml-2" href="{{ path('home_page_content_index') }}" role="button"><i class="fas fa-arrow-circle-left"></i></a></li>
+    <li> <a class="btn btn-info ml-2" href="{{ path('home_page_content_edit', {'id': home_page_content.id}) }}" role="button"><i class="fas fa-edit"></i></a></li>
+    <li>{{ include('home_page_content/_delete_form.html.twig') }} </li>
+
+{% endblock %}
+{% block body %}
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Номер</th>
+                <td>{{ home_page_content.id }}</td>
+            </tr>
+            <tr>
+                <th>Изображение Карусель</th>
+                <td> <img src="{{ asset('images/upload_images/' ~ home_page_content.imgCarusel) }}" width="240" height="80" ></td>
+            </tr>
+            <tr>
+                <th>Заголовок Карусель</th>
+                <td>{{ home_page_content.headingCarusel }}</td>
+            </tr>
+            <tr>
+                <th>Текст Карусель</th>
+                <td>{{ home_page_content.textCarusel }}</td>
+            </tr>
+            <tr>
+                <th>Изображение Круг</th>
+                <td> <img src="{{ asset('images/upload_images/' ~ home_page_content.imgCircle) }}" width="80" height="80" ></td>
+            </tr>
+            <tr>
+                <th>Заголовок Круг</th>
+                <td>{{ home_page_content.headingCircle }}</td>
+            </tr>
+            <tr>
+                <th>Текст Круг</th>
+                <td>{{ home_page_content.textCircle }}</td>
+            </tr>
+            <tr>
+                <th>Изображение Маркетинг</th>
+                <td> <img src="{{ asset('images/upload_images/' ~ home_page_content.imgMarketing) }}" width="80" height="80" ></td>
+            </tr>
+            <tr>
+                <th>Заголовок Маркетинг</th>
+                <td>{{ home_page_content.headingMarketing }}</td>
+            </tr>
+            <tr>
+                <th>Текст Маркетинг</th>
+                <td>{{ home_page_content.textMarketing }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   {% endblock %}

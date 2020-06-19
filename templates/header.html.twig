@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" xmlns="http://www.w3.org/1999/html">
+        <a class="navbar-brand" href="{{ path('home_page') }}">ХОЛОДИЛЬНИК.kiev.ua</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link " href="#">
+                        <i class="fas fa-calculator"></i> Цены </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-blog"></i> Блог</a>
+                </li>
+                <li class="nav-item">
+
+                        <div class="dropdown">
+                            <a class="nav-link " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-address-card"></i> Контакты
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="tel:+380679414696"><span class="colortext">+38 067</span> 9414696</a>
+                                <a class="dropdown-item" href="tel:+380679414696"><span class="colortext">+38 067</span> 9414696</a>
+                                <a class="dropdown-item" href="mailto:info@holodremont.kiev.ua">info@holodremont.kiev.ua</a>
+                            </div>
+
+                        </div>
+
+                </li>
+
+            </ul>
+            <form class="form-inline mt-2 mt-md-0">
+
+                <a class="nav-link disabled mr-5" href="#" tabindex="-1" aria-disabled="true">+38 067 9414696</a>
+
+                {% if app.user %}
+                    <div class="dropdown">
+                        <a class="btn btn-outline-success dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          {{ app.user.username }}
+                        </a>
+
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{{ path('admin') }}">В кабинет</a>
+                            <a class="dropdown-item" href="{{ path('home_page') }}">На главную</a>
+                            <a class="dropdown-item" href="{{ path('app_logout') }}">Выход</a>
+                        </div>
+                    </div>
+                {% else %}
+                    <a class="btn btn-outline-success my-2 my-sm-0" href="{{ path('app_login')}}" role="button">Вход</a>
+                {% endif %}
+            </form>
+        </div>
+    </nav>
+

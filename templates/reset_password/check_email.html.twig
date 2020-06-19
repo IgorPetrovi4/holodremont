@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Password Reset Email Sent{% endblock %}
+
+{% block body %}
+<form class="container" style="padding-top: 150px" method="post">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+    <p>На указанную почту было отправлено электронное письмо со ссылкой, по которой вы можете сбросить пароль. Срок действия этой ссылки истекает через {{ tokenLifetime|date('g') }} часа.</p>
+    <p>Если вы не получили письмо, проверьте папку со спамом или <a href="{{ path('app_forgot_password_request') }}">Попробуйте еще раз</a>.</p>
+        </div>
+    </div>
+</form>
+{% endblock %}

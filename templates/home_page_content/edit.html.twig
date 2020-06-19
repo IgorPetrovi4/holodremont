@@ -1,0 +1,15 @@
+{% extends 'admin/index.html.twig'%}
+
+
+{% block title %}Edit HomePageContent{% endblock %}
+{% block heading %}Редактировать {% endblock %}
+{% block heading_right %}
+    <li> <a class="btn btn-info ml-2" href="{{ path('home_page_content_index') }}" role="button"><i class="fas fa-arrow-circle-left"></i></a></li>
+    <li> <a class="btn btn-info ml-2" href="{{ path('home_page_content_edit', {'id': home_page_content.id}) }}" role="button"><i class="fas fa-edit"></i></a></li>
+    <li>{{ include('home_page_content/_delete_form.html.twig') }} </li>
+
+{% endblock %}
+{% block body %}
+    {{ include('home_page_content/_form.html.twig', {'button_label': 'Обновить'}) }}
+
+{% endblock %}
