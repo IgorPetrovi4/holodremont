@@ -42,8 +42,8 @@
             <!-- Three columns of text below the carousel -->
             <div class="row">
                 {% for home_page_content in home_page_contents %}
-                <div class="col-lg-4">
-                    <img src="{{ asset('images/upload_images/' ~ home_page_content.imgCircle) }}">
+                <div class="col-lg-4 text-center">
+                    <img  src="{{ asset('images/upload_images/' ~ home_page_content.imgCircle) }}">
                     <h2>{{ home_page_content.headingCircle }}</h2>
                     <p>{{ home_page_content.textCircle }}</p>
                    {# <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>#}
@@ -59,13 +59,12 @@
             <div class="row featurette">
                 <div {% if loop.index0 == 1 %} class="col-md-7 order-md-2" {% else %} class="col-md-7 " {% endif %}>
 
-               {# <div class="col-md-7">#}
                     <h2>{{ home_page_content.headingMarketing }}</h2>
                     <p>{{ home_page_content.textMarketing }}</p>
                 </div>
                 <div {% if loop.index0 == 0 %} class="col-md-5 order-md-1" {% else %} class="col-md-5 " {% endif %}>
-               {# <div class="col-md-5">#}
-                    <img src="{{ asset('images/upload_images/' ~ home_page_content.imgMarketing) }}">
+
+                    <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" src="{{ asset('images/upload_images/' ~ home_page_content.imgMarketing) }}">
                 </div>
             </div>
 
