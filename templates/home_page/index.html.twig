@@ -10,17 +10,25 @@
                     <li data-target="#carousel" data-slide-to="{{ loop.index0 }}" {% if loop.index0 == 0 %} class="active" {% endif %}></li>
                 {% endfor %}
             </ol>
-            <div class="carousel-inner">
+            <div class="carousel-inner ">
                 {% for home_page_content in home_page_contents %}
                 <div {% if loop.index0 == 0 %} class="carousel-item active" {% else %} class="carousel-item" {% endif %}>
                     <img class="d-block" src="{{ asset('images/upload_images/' ~ home_page_content.imgCarusel) }}" alt="#">
                     <div class="container">
-                        <div class="carousel-caption text-center">
-                            <h1 class="text-uppercase font-weight-bold" style="text-shadow: black 0 0 2px;">{{ home_page_content.headingCarusel }}</h1>
-                            <p style="text-shadow: black 0 0 2px;">{{ home_page_content.textCarusel }}</p>
+                        <div class="carousel-caption">
+                            <h1 class="text-uppercase font-weight-bold p-2  text-center " style="text-shadow: black 0 0 2px; font-size: 70px; font-size: 5.9vw;">{{ home_page_content.headingCarusel }}</h1>
+
+                            <div class="row ">
+                                <div class="col"></div>
+                                <div class="col-8">
+                            <p class="text-dark d-none d-lg-block" style="font-size: 20px;">{{ home_page_content.textCarusel }}</p>
+                                </div>
+                                <div class="col"></div>
+                            </div>
+
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-lg btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                ЗАКАЗАТЬ
+                                <button type="button" class="btn btn-lg btn-primary p-2" data-toggle="modal" data-target="#exampleModal">
+                                ЗАКАЗАТЬ РЕМОНТ
                             </button>
                         </div>
                     </div>

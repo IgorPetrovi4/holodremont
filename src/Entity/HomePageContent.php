@@ -30,7 +30,7 @@ class HomePageContent
     private $headingCarusel;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $textCarusel;
 
@@ -45,7 +45,7 @@ class HomePageContent
     private $headingCircle;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $textCircle;
 
@@ -61,7 +61,7 @@ class HomePageContent
     private $headingMarketing;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="text")
      */
     private $textMarketing;
 
